@@ -23,6 +23,11 @@ module.exports = () => {
         title: 'Text Editor'
       }),
 
+      new InjectManifest({
+        swSrc: './src-sw.js',
+        swDest: 'src-sw.js',
+      }),
+
       new WebpackPwaManifest({
         name: 'Text Editor',
         short_name: 'text_editor',
@@ -38,11 +43,6 @@ module.exports = () => {
             destination: path.join('assets', 'icons'),
           },
         ],
-      }),
-
-      new InjectManifest({
-        swSrc: './src-sw.js',
-        swDest: 'src-sw.js',
       }),
     ],
 
